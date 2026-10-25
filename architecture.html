@@ -1,0 +1,55 @@
+<style>
+  .w{display:inline-block;font-size:13px;line-height:1.4;padding:2px}
+  .hint{font-size:11px;color:var(--muted-foreground);margin-bottom:6px}
+  .row{display:flex;gap:6px;align-items:stretch}
+  .ar{align-self:center;color:var(--muted-foreground);font-size:16px}
+  details{border:1px solid var(--border);border-radius:8px;background:var(--card);padding:7px 10px;width:150px}
+  details[open]{width:240px}
+  summary{cursor:pointer;font-weight:600;list-style:none}
+  summary::-webkit-details-marker{display:none}
+  .t{display:block;font-weight:400;font-size:11px;color:var(--muted-foreground);margin-top:2px}
+  .c{border-color:var(--accent)} .c summary{color:var(--accent)}
+  ul{margin:6px 0 0;padding-left:16px;font-size:12px} li{margin:2px 0}
+  .col{display:flex;flex-direction:column;gap:4px}
+  .col details{width:150px;padding:5px 8px}
+  .dash{border-style:dashed}
+  .foot{margin-top:10px;display:flex;gap:6px;max-width:960px}
+  .foot details{width:auto;flex:1}
+</style>
+<div class="w">
+  <div class="hint">Accent = Chief (Opus, default profile). Click any box.</div>
+  <div class="row">
+    <details><summary>You<span class="t">any task, any wording</span></summary>
+      <ul><li>Talk only to Chief</li><li>Called in only when your answer changes the direction, or before anything leaves the machine</li></ul></details>
+    <span class="ar">→</span>
+    <details class="c"><summary>0 · Tier<span class="t">T0 · T1 · T2</span></summary>
+      <ul><li>T0: Chief answers</li><li>T1: delegate_task subagents (deepseek-v4-pro), minutes, nothing persists</li><li>T2: the board, when there are multiple roles, a different-family check, human gates, or work that must survive restarts</li><li>Said out loud before starting</li></ul></details>
+    <span class="ar">→</span>
+    <details class="c"><summary>1-2 · Intake + Work Order<span class="t">the pre-workflow stage</span></summary>
+      <ul><li>Only direction-changing questions, one batch</li><li>Decisions made once, then stamped into every card</li><li>Shape composed from primitives: fan-out, pipeline, verify, quorum, review loop, gate, goal-mode, recurring</li><li>Saved as WORK_ORDER.md with gates + WHEN</li></ul></details>
+    <span class="ar">→</span>
+    <details class="c"><summary>3 · Roster + mint test<span class="t">the router and the profiler</span></summary>
+      <ul><li>Reads ROSTER.md, never the NSE profiles</li><li>No fit? First try card body, then per-card skills, then a per-card model</li><li>Mint only if: (temperament conflict, model family, tool posture or own memory) AND recurrence</li><li>mint-profile.sh: blank profile, least-privilege .env</li></ul></details>
+    <span class="ar">→</span>
+    <div class="col">
+      <details><summary>researcher<span class="t">deepseek-v4-pro</span></summary><ul><li>Dated claims ledger</li><li>Public sources only for people</li></ul></details>
+      <details><summary>maker<span class="t">deepseek-v4-pro</span></summary><ul><li>Builds, tests, runs</li><li>REA for cloning</li><li>Dry-run + approval on anything outward</li></ul></details>
+      <details><summary>writer<span class="t">deepseek-v4-pro</span></summary><ul><li>Your voice via kinshuk-context</li><li>Never invents facts</li></ul></details>
+      <details class="dash"><summary>+ minted on demand<span class="t">coach · ui-designer · reverser…</span></summary><ul><li>Only when the test passes</li><li>Logged in ROSTER.md</li></ul></details>
+    </div>
+    <span class="ar">→</span>
+    <details><summary>skeptic<span class="t">glm-4.7, different family</span></summary>
+      <ul><li>SUPPORTED / WEAK / UNSUPPORTED / STALE per claim</li><li>AI-tell scan on prose</li><li>Never fixes, never softens</li></ul></details>
+    <span class="ar">→</span>
+    <details class="c"><summary>6-7 · Accept + deliver<span class="t">Chief</span></summary>
+      <ul><li>Opens artifacts, spot-checks claims, runs builds</li><li>Writes the synthesis, does the final voice pass</li></ul></details>
+  </div>
+  <div class="foot">
+    <details class="dash"><summary>Jev slot (not wired)<span class="t">needs TYPESAFE_API_KEY</span></summary>
+      <ul><li>Bulk claim-vs-passage yes/no inside skeptic</li><li>AI-tell scoring per paragraph in writer loops</li><li>Acceptance pre-check per criterion</li><li>Not for routing or goal_judge</li></ul></details>
+    <details><summary>8 · Learning loop<span class="t">after every project</span></summary>
+      <ul><li>Precedent appended (which shape worked)</li><li>Workers' skill_feedback applied by Chief</li><li>New facts about you go into the kinshuk-context skill</li><li>Each worker learns its own craft in its own memory and skills</li><li>Curator prunes stale skills</li></ul></details>
+    <details><summary>Shared state<span class="t">why context doesn't rot</span></summary>
+      <ul><li>Board desk = task truth</li><li>~/ChiefDesk/projects/&lt;slug&gt; = artifacts</li><li>.hermes.md = rules every worker inherits</li><li>Chief reads summaries, not transcripts, so /new is always safe</li></ul></details>
+  </div>
+</div>

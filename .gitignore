@@ -1,0 +1,7 @@
+projects/
+explainers/
+.DS_Store
+.env
+.env.*
+*.bak*
+__pycache__/

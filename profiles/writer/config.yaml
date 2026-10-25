@@ -1,0 +1,10 @@
+model:
+  default: deepseek-v4-pro
+  provider: deepseek
+  base_url: ''
+_config_version: 51
+terminal:
+  cwd: /Users/Kinshuk/ChiefDesk
+skills:
+  external_dirs:
+    - /Users/Kinshuk/.hermes/skills

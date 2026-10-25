@@ -1,0 +1,10 @@
+model:
+  default: glm-4.7
+  provider: zai
+  base_url: ''
+_config_version: 51
+terminal:
+  cwd: /Users/Kinshuk/ChiefDesk
+skills:
+  external_dirs:
+    - /Users/Kinshuk/.hermes/skills
