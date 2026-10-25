@@ -199,6 +199,10 @@ lesson counts only when it changes what the next run does. Before saying "done":
 7. Write `RETRO.md` in the project folder and a short entry in `references/precedents.md`; roster changes
    go to `ROSTER.md`.
 8. In the delivery message, add a "What I learned / changed" line (1-3 items).
+9. If any skill, profile SOUL/config or desk file changed, offer Kinshuk to sync and push the desk
+   (public repo github.com/Kinshuk699/chief-desk): `~/ChiefDesk/bin/sync-from-hermes.sh` (copies
+   from ~/.hermes, strips the salary line, aborts on key-like strings), then commit and push from
+   ~/ChiefDesk. Any session can do this; ask first, never push unasked.
 Every 5th scoreboard row: consolidate. Merge duplicate rules, delete rules that never fired, read the
 trends (errors after checker, cost, time) and tell Kinshuk what's improving and what isn't.
 
