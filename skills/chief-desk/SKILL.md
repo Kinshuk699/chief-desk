@@ -71,6 +71,18 @@ plan embodies a direction-changing choice; otherwise show it with the result.
   `workspace_kind="worktree"` in that repo.
 - Workers cannot see sibling cards: stamp every shared decision into every card body.
 - Fan-in with `parents=[...]`. Checker cards depend on producer cards.
+- A build/lesson card that consumes research facts: don't create it with `parents=[skeptic]`. Create it
+  only after Chief's own acceptance (Step 6); the parent gate fires the moment the skeptic finishes, so the
+  maker would build on facts Chief hasn't checked. Note it as "pending" in the Work Order cards table.
+- Visual reference from Kinshuk (screenshot, video frame): copy it into `<project>/refs/`, write a short
+  `refs/<NAME>_STYLE.md` (layout, colours, what makes it work, how it maps to our content), lock it in
+  the Work Order, and make the maker card say "open both". Vision-analyze the image yourself first: a
+  described image loses the layout, and the maker matched the style first try when given file + spec.
+- **Spec / equipment / sizing questions** (Kinshuk's dad called topic-briefed reports "very general"): Chief
+  does the sizing FIRST (mass balance, site conditions, derating) and every card carries the numeric targets,
+  a rule to save the maker's datasheet to `assets/<v>/datasheets/`, quoted altitude/temperature lines, and a
+  fit-check table per model (meets size A? size B? with arithmetic). The skeptic opens every saved datasheet.
+  Report the share as "independent primary" and "+ makers' own datasheets" separately.
 - `goal_mode=true` only for open-ended cards with crisp, checkable acceptance criteria.
 - Pin skills per card: `reverse-engineer-anything`, `web-effect-forensics`, `humanizer`,
   `kinshuk-context`, `kinshuk-essay-voice`, `grounded-citations`, `tdd`, `jev-judge`, etc. All of the
@@ -84,9 +96,11 @@ plan embodies a direction-changing choice; otherwise show it with the result.
 - Chief works only inside a turn. Never say "I'm picking it up now" and then end the turn: on a status
   ping where the checker is done, either do the acceptance work in that same turn, or give the ETA and
   ask for "go" (offer a faster option, e.g. skipping re-checks with them flagged).
-- ETAs: estimate the skeptic from rows and source type, not from the last run. Web-page ledgers verify
-  in ~15 min; PDF-heavy ones (Parliament reports, BIS/ECBC codes, tenders) took ~50 min for ~270 rows
-  because jev-judge fetches and searches each PDF. Chief's acceptance + writing + render is 40-60 min on
+- ETAs: estimate each stage from its source type, not from the last run, and pad lightly: over-padding
+  costs as much trust as slipping (he asks "why 2 hours?"). Web-only stages are fast: researchers ~7-10
+  min, a ~130-row web skeptic ~7-15 min, a maker lesson/HTML pack ~30-40 min. PDF-heavy ledgers
+  (Parliament reports, BIS/ECBC codes, tenders) took ~50 min for ~270 rows because jev-judge fetches and
+  searches each PDF. When a stage finishes early, give the NEW, earlier ETA on the next ping. Chief's acceptance + writing + render is 40-60 min on
   top, more if the skeptic passed rows unchecked. Give one ETA with buffer; Kinshuk pings every 15-20
   min, and each slip costs trust. Status replies: time now, card states, what was found so far, ETA,
   when to ping.
@@ -105,7 +119,8 @@ plan embodies a direction-changing choice; otherwise show it with the result.
 - Read summary + metadata, then open the artifacts. Spot-check at least two claims or
   run the thing yourself. Never accept on a worker's word (Kinshuk's standing rule).
 - First grep the skeptic's VERIFY file for rows passed on someone else's word (`verified by`,
-  `parent`, `researcher verified`) and count them. Key claims among them get Chief's own live check
+  `parent` incl. "parent confirms", `researcher verified`) and count them yourself: the skeptic's own
+  `parent_verified:` count under-reports (it said 0 while 5 notes read "parent confirms"). Key claims among them get Chief's own live check
   before writing; the rest are flagged in the quality box. Tell Kinshuk the count with the status.
 - Restricted material (military drawings, type plans, classified specs): public sources only. If a
   reviewer asks for one, report exactly what the public record says exists, give the closest public
@@ -227,7 +242,14 @@ he'll be needed).
 
 ## Pitfalls
 
+- Sizing from a per-person rule of thumb (e.g. West's 100 L/h per person per % O2) ignores leakage and the CO2
+  limit; v3 under-sized oxygen ~75% this way. Do a mass balance with fresh air + infiltration and check CO2.
+
 - Don't predict engineering results to Kinshuk before doing the arithmetic (v4: 'heating probably exceeds oxygen power' was wrong by ~5x). Say 'we'll size it' instead.
+- Same for money: before asking him to add a paid API key, show cost per unit (fee + tokens, from verified
+  prices) and a project total with the assumptions marked as guesses; after the first live paid call,
+  compare actual vs estimate and re-quote. Agentic tools take several actions per request (one web-search
+  question = 3 billed actions), so per-call guesses run ~3x low.
 - `board="desk"` on every kanban call (see Step 4). Never `hermes kanban boards switch`.
 - The sticky active profile file says `orchestrator`: in terminals, always `hermes -p <name> ...`.
 - The kanban toolset only appears in NEW sessions after it is enabled; in an old session use the CLI.
@@ -247,5 +269,7 @@ he'll be needed).
   researchers run; the skeptic spends more on top). Tell Kinshuk when the balance covers fewer than two
   more runs. Below ~100: run it with
   `--swap-below 100` to switch every profile's .env to Kinshuk's backup key `FIRECRAWL_API_KEY_2` (he adds
-  it to ~/.hermes/.env himself; never take keys in chat). If both are empty, Hermes' keyless rescue
+  it to ~/.hermes/.env himself; never take keys in chat). Compare the masked suffixes the script prints:
+  if the backup shows the same suffix as the active key there is NO real backup, so say so when
+  reporting the balance. If both are empty, Hermes' keyless rescue
   (web.keyless_rescue, default on) still serves failed calls, at lower quality.

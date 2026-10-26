@@ -17,5 +17,11 @@
   `web-effect-forensics` refs). Public repos: stickbook-magic, sarvam-hover-effect.
 - **Essays** (Desktop projects): 'aging and religiosity research' (AR-01/AR-02),
   'Epistemic Crisis' (Wrinkles, published), 'Dunning-Kruger'.
+- **AEO harness** (learning + business project): code `~/Developer/aeo-harness` (local git only, no
+  push without his go; `progress.md` one line per day; raw API responses saved in `out/`). Desk folder
+  `~/ChiefDesk/projects/2026-10-25-aeo-harness` (WORK_ORDER, CURRICULUM v1, lessons/*.html, refs/).
+  OpenAI + Anthropic keys live in the project `.env` (not ~/.hermes/.env); he wants the CHEAPEST models
+  (gpt-6-luna, claude-haiku-5-5). Perplexity shelved. Engines out on terms: Gemini grounding, Google AIO.
+  Tutoring procedure: skill `build-along-course`.
 - **ITI / itigo.in** (js@itigo.in): GCP 'MasterWebsite' Internal OAuth; 'ITI Deals' drive;
   DNS = Cloudflare; Mohit = admin.

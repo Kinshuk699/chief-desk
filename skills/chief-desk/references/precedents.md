@@ -51,6 +51,11 @@ Not playbooks. Starting points Chief adapts. Format:
 - Change: calibrate with 3 repeats, not 1 (Jev drifts up to 0.2 at low confidence). Total Jev
   spend for all calibration + tests: under $0.005; skeptic smoke test ~$0.03 of the GLM pool.
 
+## 2026-10-25 aeo-harness (learning + business project, research + lesson pack, verified)
+- Ask: learn agent harnesses by building something sellable. Tier T2. Shape: r1 (field) ∥ r2 (APIs/prices/terms + harness sources) → skeptic ∥ benchmark → Chief live acceptance → maker lesson pack (created only after acceptance) → Chief click-through. 53 min of card time.
+- Worked: a terms row (Gemini grounding forbids analyzing results) changed the product scope before any build; the reference screenshot + a style spec file gave the maker a design it matched first try; the maker self-tested overlaps with getBBox.
+- Didn't: Chief's ETA was 4x padded; skeptic's parent_verified count said 0 while 5 rows said "parent confirms" — grep the wording at acceptance.
+
 ## Seed sketches (unverified; replace with real entries as projects run)
 - **Background research on a person (public sources)**: T2. Fan-out by facet (career
   timeline, published work/talks, company context, recent news) → skeptic → Chief brief.
@@ -69,6 +74,20 @@ Not playbooks. Starting points Chief adapts. Format:
   → Chief skill map vs JD → writer/coach question bank from his real stories → skeptic → live mock in chat.
 - **Study a topic**: T2. Researcher (current sources) → maker builds visual HTML lessons +
   quizzes → cron job for spaced repetition review.
+- **Learn-by-building curriculum (e.g. agent harness via an AEO auditor, run 2026-10-25, in progress)**:
+  intake = target role + code floor + daily hours + demo domain (one clarify), then brainstorm 3 product
+  options in a table (buyer, concepts covered, legal risk, content potential, novelty) with a pick; he
+  chooses. Shape: r1 (domain field: metrics, methods, tools) ∥ r2 (official APIs, prices, terms incl.
+  publishing rights + primary engineering sources for lessons) → skeptic ∥ benchmark → Chief acceptance
+  → maker lesson pack (master diagram + first 3 days), created only after acceptance. Chief writes
+  CURRICULUM.md in parallel: per day concept | diagram box | build step | explain-it-back question,
+  daily blocks lesson 30 / build 60-90 / explain-back 20 / log 10 min. Pick a product that is a real
+  business tool on official APIs (legal, sellable, yields content), not a toy or a scraper clone.
+  Offer the business track early (he wants learning to turn into a service): last two days become
+  client-ready deliverable + offer sheet/pitch, plus optional pilot days (shortlist, outreach drafts he
+  sends himself, 2-3 free pilots, re-measure date, price from feedback). Code floor "AI writes, he
+  explains" means each day ends with explain-it-back + grilling; set up a local repo + `.env` template
+  (keys added by him, never in chat) before the first build session.
 - **Recreate a data-API product (e.g. Mindcase)**: T2. Legality gate first (per-source ToS/law
   → skeptic → Chief marks buildable sources; human gate on scope) ∥ maker+REA on the
   competitor's own public app (catalog, run model, pricing, MCP surface) ∥ researcher on

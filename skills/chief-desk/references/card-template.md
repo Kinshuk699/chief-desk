@@ -82,7 +82,9 @@ Skeptic card, under "Your task":
   numbers inside multi-column code tables. Fetch the text yourself (curl + pymupdf, or the publisher's
   free abstract/registry), grep for the number, paste the line; else UNCHECKED. Report the count of
   UNCHECKED key claims in your summary line.
-- Output a counted `parent_verified:` list (row ids you passed without your own or Jev's fetch). Chief re-checks every
+- Output a counted `parent_verified:` list (row ids you passed without your own or Jev's fetch). Any row
+  whose note says "parent confirms" / "researcher confirms" or whose `my check` is UNCHECKED but verdict
+  SUPPORTED belongs on this list; it is not 0 if such rows exist. Chief re-checks every
   key row on it before writing; the rule alone didn't stop it (v3: 150 rows, v4: 28 rows; causes: scanned PDFs, CJK,
   publisher 403s, multi-column tables).
 - Never accept "parent-verified" for a key claim: if your fetch fails, use the route in

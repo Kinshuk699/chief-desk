@@ -83,3 +83,5 @@ live session served history from memory. Nothing in this file depends on that ch
 13. v3 (oxygen-enriched rooms only, for Kinshuk's dad): `projects/2026-10-23-high-altitude-shelters/report-v3.pdf` (WORK_ORDER-v3.md, VERIFY-v3.md, card_ids_v3.txt). Delivered 2026-10-24 02:53; awaiting dad's review. Firecrawl now on backup key …(redacted) (old key kept as FIRECRAWL_API_KEY_OLD); `tools/firecrawl_credits.py`.
 
 14. v4 (the shelter itself: walls/roof, 5/12/20 concept plans, heating, 3 sites): `projects/2026-10-23-high-altitude-shelters/report-v4.pdf` (WORK_ORDER-v4.md, VERIFY-v4.md, card_ids_v4.txt). Delivered 2026-10-24; awaiting dad's review. Next desk run starts with the scoreboard consolidation pass.
+
+15. v5 (Leh base-case equipment spec, 5 & 12 people): `projects/2026-10-23-high-altitude-shelters/report-v5.pdf` (WORK_ORDER-v5.md, VERIFY-v5.md, card_ids_v5.txt, assets/v5/datasheets). Delivered 2026-10-26; awaiting dad. Next run: scoreboard consolidation first.

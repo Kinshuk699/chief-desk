@@ -10,6 +10,12 @@
 
 ## Presentation
 - Visual learner: HTML visuals, block diagrams, click-to-expand, pipeline diagrams.
+- Teaching/learning series: ONE master system diagram that grows box by box per lesson, today's new
+  boxes highlighted (accent colour), every box click-to-expand (his reference: Sean Chen's Hermes
+  harness video). Each lesson adds to the same diagram rather than drawing a fresh one.
+  Style he picked (screenshot, 2026-10-25): hand-drawn Excalidraw look, nested coloured containers
+  (harness / loop / memory row), small red annotations naming the real file or mechanism behind each box.
+  Spec: ~/ChiefDesk/projects/2026-10-25-aeo-harness/refs/DIAGRAM_STYLE.md.
 - Loves easter-egg UX: hidden reveals, teases, one-shot plays.
 - Charts: academic stock-chart look (white bg, black lines, gray hatch fills, serif caps
   annotations, L-frame axes, sans ticks). Never invent chart numbers. No text overlapping lines.
